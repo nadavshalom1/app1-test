@@ -31,7 +31,7 @@ spec:
       - name: nginx
         image: nginx:alpine
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         volumeMounts:
         - name: html-volume
           mountPath: /usr/share/nginx/html
@@ -49,6 +49,6 @@ spec:
     app: webapp
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP
+      port: 3000
+      targetPort: 3000
+  type: LoadBalancer
